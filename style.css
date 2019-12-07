@@ -1,0 +1,11 @@
+
+body{
+    background-color: black;
+}
+
+#header{
+    color: white;
+    font-size: 2em;
+    text-transform: uppercase;
+    border-bottom: solid 2px white;
+}
