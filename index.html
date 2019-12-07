@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Algo Visualiser</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header id="header">
+        <label> Graph Algo Visualizer</label>
+    </header>
+    <div class="controls">
+
+    </div>
+    <div class="graph-container">
+        <!--  Contains the graph representation  -->
+    </div>
+    
+    <div id="mods">
+        <aside id="controls">
+            <label id="hint">Rows</label>
+            <input id="rows" type="text" value="10" />
+            <label id="hint">Cols</label>
+            <input id="cols" type="text" value="10" />
+            <label id="hint">Size</label>
+            <input id="blockSize" type="text" value="40" />
+            <button onClick="setrc()"> Set </button>
+            <button onClick="showHint()"> Hint </button>
+
+        </aside>
+
+        <aside id="operations">
+            <button onClick="generate()"> Generate Grid </button>
+            <button onclick="traverse()">Traverse</button>
+            <button onClick="dfs()">DFS </button>
+            <button onClick="bfs()">BFS </button>
+        </aside>
+
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>
