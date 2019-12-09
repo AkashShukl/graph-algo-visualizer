@@ -41,7 +41,24 @@ function generateGraph() {
     return container;
 
 }
+//Traversal logic one by one visiting
+async function traverse() {
 
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+
+            let temp = String(i) + "-" + String(j);
+            var curr = document.getElementById(temp)
+            curr.style.backgroundColor = "black";
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                    resolve();
+                }, 300)
+            );
+            curr.style.backgroundColor = "white";
+        }
+    }
+}
 //main//
 generateGraph();
 function generate() {
