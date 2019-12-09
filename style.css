@@ -9,3 +9,27 @@ body{
     text-transform: uppercase;
     border-bottom: solid 2px white;
 }
+
+.block{
+    /* height:40px;
+    width:40px; */
+    background-color: white; 
+}
+
+.block-parent{
+    display: flex;
+    /* position: absolute; */
+}
+
+.graph-container{
+    justify-content: center;
+    background-color: black;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    margin-left: 30%;
+    margin-top:3%;
+
+}
