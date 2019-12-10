@@ -59,6 +59,91 @@ async function traverse() {
         }
     }
 }
+
+//BFS and DFS
+
+///dfs logic
+var dx = [0, 1, -1, 0];
+var dy = [1, 0, 0, -1];
+
+
+
+let isvalid = (vis, a, b) => {
+    if (a >= rows || b >= cols || a < 0 || b < 0)
+        return false;
+
+    let block_id = String(a) + "-" + String(b);
+    let block = document.getElementById(block_id);
+    let isBlocked = block.getAttribute("blocked");
+
+    if (isBlocked === "true")
+        return false;
+    console.log(vis);
+    console.log("a,b=", a, b)
+    if (vis[a][b])
+        return false;
+
+    return true;
+}
+
+async function bfs() {
+    console.log(rows, cols)
+
+    var vis = Array(rows);
+    for (let i = 0; i < rows; i++)
+        vis[i] = Array(cols).fill(false);
+
+    root = { "r": startx, "c": starty };
+    vis[startx][starty] = true;
+    let queue = [root]
+    let current;
+
+
+    while (queue.length != 0) {
+
+        current = queue.shift()
+
+
+        let r = current['r'];
+        let c = current['c'];
+
+        //view
+        let block_id = String(r) + "-" + String(c);
+        let block = document.getElementById(block_id);
+        block.style.backgroundColor = "green";
+        await new Promise((resolve) =>
+            setTimeout(() => {
+                resolve();
+            }, 300)
+        );
+        block.style.backgroundColor = "white";
+        //endview
+
+        if (r === endx && c === endy) {
+            console.log(endx, endy)
+            block.style.backgroundColor = "RED";
+            console.log("Found");
+            return;
+        }
+
+        for (let i = 0; i < 4; i++) {
+            let next = { "r": current['r'] + dx[i], "c": current['c'] + dy[i] }
+
+            let valid = isvalid(vis, current['r'] + dx[i], current['c'] + dy[i]);
+
+            if (valid === true) {
+
+                vis[r + dx[i]][c + dy[i]] = true;
+                queue.push(next);
+            }
+        }
+
+    }
+}
+
+
+
+
 //main//
 generateGraph();
 function generate() {
