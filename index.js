@@ -143,6 +143,58 @@ async function bfs() {
 
 
 
+async function dfs() {
+    let stack = [];
+
+    var vis = Array(rows);
+    for (let i = 0; i < rows; i++)
+        vis[i] = Array(cols).fill(false);
+
+
+    let start = { 'r': startx, 'c': starty };
+    stack.push(start);
+
+    vis[startx][starty] = true;
+
+    while (stack.length > 0) {
+
+        let curr = stack.pop();
+        let r = curr['r'];
+        let c = curr['c'];
+        //view
+        let block_id = String(r) + "-" + String(c);
+        let block = document.getElementById(block_id);
+        block.style.backgroundColor = "green";
+        await new Promise((resolve) =>
+            setTimeout(() => {
+                resolve();
+            }, 300)
+        );
+        block.style.backgroundColor = "white";
+        //endview
+
+        if (r === endx && c === endy) {
+            block.style.backgroundColor = "RED";
+            console.log("Found");
+            return;
+        }
+
+        console.log(curr);
+        for (let i = 0; i < 4; i++) {
+            let a = curr['r'] + dx[i];
+            let b = curr['c'] + dy[i];
+            let next = { 'r': a, 'c': b };
+            let valid = isvalid(vis, a, b);
+            if (valid) {
+                vis[a][b] = true;
+                stack.push(next)
+            }
+        }
+    }
+
+
+}
+
 
 //main//
 generateGraph();
