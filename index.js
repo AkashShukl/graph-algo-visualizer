@@ -41,6 +41,26 @@ function generateGraph() {
     return container;
 
 }
+
+function markDisable(block_obj) {
+
+    let block_id = String(block_obj['row']) + "-" + String(block_obj['col']);
+    console.log(block_id);
+    let block = document.getElementById(block_id);
+    let curr_attribute = block.getAttribute("blocked")
+
+    if (curr_attribute === "false")
+        curr_attribute = "true";
+    else
+        curr_attribute = "false";
+
+    block.setAttribute("blocked", curr_attribute);
+    let blockColor = curr_attribute === "true" ? "brown" : "white";
+    block.style.backgroundColor = blockColor;
+}
+
+
+
 //Traversal logic one by one visiting
 async function traverse() {
 
@@ -195,7 +215,12 @@ async function dfs() {
 
 }
 
+function showHint() {
+    let str = "Click on the blocks to add boundareis \n You can also change size of block" +
+        "number of rows and columns!\n start position is 1,1 and destinantion is " + `${rows}` + "," + `${cols}`;
 
+    alert(str);
+}
 //main//
 generateGraph();
 function generate() {
