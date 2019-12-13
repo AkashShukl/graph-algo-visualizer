@@ -7,6 +7,30 @@ var starty = 0;
 var endx = rows - 1;
 var endy = cols - 1;
 
+function reload() {
+    var container = document.querySelector(".graph-container");
+    var content = container.innerHTML;
+    container.innerHTML = "";
+    let x = generateGraph();
+    container.innerHTML = x.innerHTML;
+    console.log("Refreshed");
+}
+
+function setrc() {
+    console.log("check");
+    let r = document.getElementById("rows").value;
+    let c = document.getElementById("cols").value;
+    let s = document.getElementById("blockSize").value;
+    // r = r < 3 ? 3 : r;
+    // c = c < 3 ? 3 : c;
+    rows = r;
+    cols = c;
+    size = s;
+    endx = r - 1;
+    endy = c - 1;
+    reload();
+
+}
 
 function generateGraph() {
 
