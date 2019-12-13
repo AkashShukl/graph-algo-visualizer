@@ -31,5 +31,47 @@ body{
     padding-bottom: 30px;
     margin-left: 30%;
     margin-top:3%;
-
 }
+
+#controls{
+    margin-left: 20px; 
+    color:wheat;
+}
+#controls button{
+    width:60px;
+    height: 30px;
+    border-radius: 10%;
+    background-color: rgb(10, 7, 3);
+    color: wheat;
+}
+
+#operations{
+    margin-right: 20px;
+}
+
+#operations button {
+    height: 30px;
+    margin-top: 5px;
+    background-color: rgb(10, 7, 3);
+    color: wheat;
+}
+
+#mods{
+    display: flex;
+    width: 100%;
+    border-top: bisque;
+    background-color: rgb(1, 1, 5);
+    padding: 5px;
+    justify-content: space-between;
+    bottom: 0px;
+    left:0px;
+    position: absolute;
+    border-top: white solid 2px;
+}
+
+#mods input{
+    width: 20px;
+    height: 20px;
+    text-align: center;
+}
+
