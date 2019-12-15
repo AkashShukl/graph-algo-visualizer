@@ -212,7 +212,7 @@ async function dfs() {
         await new Promise((resolve) =>
             setTimeout(() => {
                 resolve();
-            }, 300)
+            }, 200)
         );
         block.style.backgroundColor = "white";
         //endview
