@@ -1,4 +1,4 @@
-# Graph Algo Visualizer 
+# Graph Algo Visualizer on GRID
 
 ## I have crated this project as I wanted to visualise the working of BFS and DSF i.e. Bredth first Search and Depth first Search 
 
