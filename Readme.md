@@ -5,4 +5,4 @@
 <hr>
 <img src="./extras/anim.gif" alt="gif">
 <hr>
-<img src="./extras/sc.jpg" alt="jpg">
+<img src="./extras/sc.jpg" alt="JPG">
